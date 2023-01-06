@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.video {
+  &__player {
+    background-color: #000000;
+    height: 40rem;
+    width: 100%;
+
+    @include tablet {
+      padding: 0 8rem;
+    }
+  }
+
+  &__controls {
+    @include flex($justify: space-around);
+    width: 100%;
+    z-index: 2;
+
+    &--left, &--middle, &--right {
+        background-color: $dark-black;
+    }
+  }
+
+  &__controls-icon {
+    padding: 0.4rem;
+  }
+
+
+}

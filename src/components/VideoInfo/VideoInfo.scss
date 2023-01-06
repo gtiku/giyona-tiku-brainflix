@@ -1,0 +1,61 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.video-info {
+    padding: 2rem;
+
+    @include tablet {
+        padding: 2rem 8rem;
+    }
+
+    &__heading, &__stats {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid $mercury;
+
+        @include tablet {
+            border-bottom: none;
+        }
+    }
+
+    &__stats {
+        color: $mercury;
+        @include flex($justify: flex-start);
+
+        @include tablet {
+            @include flex($justify: space-between);
+            border-bottom: 1px solid $mercury;
+        }
+    }
+
+    &__creator-date, &__engagement {
+        @include flex($direction: column, $align: flex-start);
+
+        @include tablet {
+            @include flex($justify: flex-start);
+        }
+    }
+
+    &__engagement {
+        padding-left: 8rem;
+    }
+
+    &__creator {
+        font-family: "Avenir Bold";
+        font-weight: 700;
+        color: $black;
+    }
+
+    &__creator, &__views {
+        padding-right: 3.2rem;
+    }
+
+    &__description {
+        padding: 1.6rem 0;
+    }
+}
+
+img {
+    padding-right: 0.4rem;
+}
