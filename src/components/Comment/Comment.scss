@@ -4,38 +4,39 @@
 @use "../../styles/partials/global";
 
 .comment {
-  padding: 1% 5% 2%;
-
+  @include sectionPadding;
   @include flex($align: flex-start);
   border-bottom: 0.2rem solid $mercury;
   padding-bottom: 1rem;
-  margin: 2rem auto;
+  margin: 0.8rem auto;
 
   @include tablet {
-    width: 100%;
+    max-width: 60rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    margin: 0;
+    padding: 0;
+    align-self: flex-end;
   }
 
   &__pfp-box {
-    background-color: $mercury;
-    background-size: cover;
-    min-height: 3.6rem;
-    min-width: 3.6rem;
-    border-radius: 50%;
+    @include pfp-box;
     margin-right: 2rem;
 
     @include tablet {
-      height: 4.8rem;
-      width: 4.8rem;
-      margin: 2rem;
+      margin: 0.4rem 2rem 0 0;
     }
   }
 
   &__text-display {
     @include flex($direction: column, $align: flex-start);
-    width: 20rem;
+    min-width: 20rem;
 
     @include tablet {
-      width: 50rem;
+      max-width: 50rem;
     }
   }
 

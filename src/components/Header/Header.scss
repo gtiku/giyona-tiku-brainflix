@@ -6,6 +6,8 @@
 input {
   width: 100%;
   margin-right: 1.6rem;
+  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
+  padding-right: 7rem;
 
   @include tablet {
     min-width: 2.4rem;
@@ -17,6 +19,7 @@ input {
 button {
   width: 28rem;
   margin: 0.4rem 0;
+  background: url("../../assets/images/icons/upload.svg") no-repeat 1.6rem;
   @include tablet {
     min-width: 4rem;
     max-width: 16rem;

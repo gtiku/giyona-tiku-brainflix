@@ -5,12 +5,7 @@
 
 label {
   color: $silver;
-  font-weight: 800;
-  font-size: 1rem;
-
-  @include tablet {
-    font-size: 1.3rem;
-  }
+  font-weight: 600;
 }
 
 textarea {
@@ -19,75 +14,75 @@ textarea {
   border-radius: 5px;
   font-family: "Avenir Regular";
   font-weight: 400;
-  margin: -1.6rem 0 1.2rem;
-  width: 95%;
+  margin: 0 0 1.2rem;
   height: 8rem;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem;
+  resize: none;
+  min-width: 22rem;
 
   &:focus {
     outline: $blue solid 2px;
   }
 
-  &:invalid {
-    outline: #d22d2d solid 1px;
-  }
-
   @include tablet {
+    min-width: 34rem;
     max-width: 50rem;
-    height: 12rem;
+    height: 4rem;
+    margin: 0;
   }
 }
 
 .comment-form {
-  @include sectionPadding;
-  @include flex($justify: flex-start);
+  @include desktop {
+    margin: 0;
+    padding: 0;
+    align-self: flex-end;
+  }
 
   &__form {
     @include flex($align: flex-start);
     border-bottom: 0.2rem solid $mercury;
-    margin: 0;
-    margin-bottom: 1.6rem;
-    padding: 2rem 0;
+    padding-bottom: 0.8rem;
     width: 100%;
 
     @include tablet {
+      @include flex($justify: space-between, $align: flex-end);
+      padding-bottom: 2rem;
       max-width: 60rem;
       margin: 0 auto;
     }
   }
 
-  &__form-box {
+  &__form-inputs {
     @include flex($direction: column, $align: flex-start);
     width: 100%;
 
     @include tablet {
-      max-width: 50rem;
+      @include flex($justify: space-between, $align: flex-end);
+      margin: 0 auto;
     }
   }
 
+  &__label-textarea {
+    @include flex($direction: column, $align: flex-start);
+  }
+
   &__button {
-    width: 95%;
+    background: url("../../assets/images/icons/add_comment.svg") no-repeat
+      1.6rem;
+    width: 90%;
 
     @include tablet {
       width: 16rem;
-      align-self: end;
+      padding: 0;
+      margin: 0;
     }
   }
 
   &__pfp-box {
-    background-color: $mercury;
-    background-size: cover;
-    min-height: 3.6rem;
-    min-width: 3.6rem;
-    border-radius: 50%;
-    margin: 1.6rem;
+    @include pfp-box;
     background-image: url("../../assets/images/Mohan-muruge.jpg");
-    background-size: cover;
-
-    @include tablet {
-      height: 4.8rem;
-      width: 4.8rem;
-      margin: 2rem;
-    }
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }

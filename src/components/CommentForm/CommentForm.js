@@ -4,20 +4,20 @@ import "./CommentForm.scss";
 
 const CommentForm = () => {
   return (
-    <div>
+    <div className="comment-form">
       <form className="comment-form__form">
         <div className="comment-form__pfp-box"></div>
 
-        <div className="comment-form__form-box">
-          <label name="comment" className="comment-form__form-text">
-            JOIN THE CONVERSATION
-          </label>
-          <br />
-          <textarea
-            name="comment"
-            placeholder="Add a new comment"
-            required
-          ></textarea>
+        <div className="comment-form__form-inputs">
+          <div className="comment-form__label-textarea">
+            <label name="comment">JOIN THE CONVERSATION</label>
+            <textarea
+              name="comment"
+              placeholder="Add a new comment"
+              required
+            ></textarea>
+          </div>
+
           <button className="comment-form__button">COMMENT</button>
         </div>
       </form>

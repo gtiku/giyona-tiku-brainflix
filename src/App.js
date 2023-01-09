@@ -1,41 +1,52 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import NextVideos from "./components/NextVideos/NextVideos";
-import Video from "./components/Video/Video";
+import NextVideosList from "./components/NextVideos/NextVideosList";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import VideoInfo from "./components/VideoInfo/VideoInfo";
+import VideoComments from "./components/VideoComments/VideoComments";
 import { findCurrentVideo, nextVideosData } from "./data/data";
-// import { useState } from "react";
+import { useState } from "react";
 
 function App() {
   // Select  videoID
-  // const [videoID, setVideoID] = useState(
-  //   "84e96018-4022-434e-80bf-000ce4cd12b8"
-  // );
+  const [videoID, setVideoID] = useState(
+    "84e96018-4022-434e-80bf-000ce4cd12b8"
+  );
 
-  // Select video video
-  // const [video, setVideo] = useState(getVideoDetailsData(videoID));
+  // Select video
+  const [currentVideo, setVideo] = useState(findCurrentVideo(videoID));
 
-  // Click handler
-  // const clickHandler = (event, videoID) => {
-  //   event.preventDefault();
-  // };
+  // Next videos
+  const [nextVideos, setnextVideos] = useState(nextVideosData(videoID));
 
-  const videoID = "84e96018-4022-434e-80bf-000ce4cd12b8";
-  const currentVideo = findCurrentVideo(videoID);
-  const nextVideos = nextVideosData(videoID);
-
-  // const findVideo = (id) => {
-  //   return videoDetailsData.find((video) => video.id === videoID);
-  // };
-
-  // const video = findVideo(videoID);
-  console.log(currentVideo.video, currentVideo.title);
-  console.log(nextVideos);
+  // Next video click handler
+  const handleNextVideoClick = (event, id) => {
+    event.preventDefault();
+    setVideoID(id);
+    setVideo(findCurrentVideo(id));
+    setnextVideos(nextVideosData(id));
+  };
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
-      <Video video={currentVideo} />
-      <NextVideos nextVideos={nextVideos} />
+      <VideoPlayer video={currentVideo} />
+      <div className="flex-desktop">
+        <div className="flex-desktop__left">
+          <VideoInfo video={currentVideo} className="VideoInfo" />
+          <VideoComments
+            videoComments={currentVideo.comments}
+            className="VideoComments"
+          />
+        </div>
+        <div className="flex-desktop__right">
+          <NextVideosList
+            nextVideos={nextVideos}
+            handleNextVideoClick={handleNextVideoClick}
+            className="NextVideoList"
+          />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,12 +1,9 @@
 import React from "react";
 import "./Header.scss";
 import logo from "../../assets/images/BrainFlix-logo.svg";
-import search_icon from "../../assets/images/icons/search.svg";
 import profile_pic from "../../assets/images/Mohan-muruge.jpg";
 
 const Header = () => {
-  let searchPlaceholder = `${search_icon} Search`;
-
   return (
     <div className="header">
       <a href="./">
@@ -17,7 +14,7 @@ const Header = () => {
         <div className="header__flex-mobile">
           <input
             type="text"
-            placeholder={searchPlaceholder}
+            placeholder="Search"
             className="header__searchbar"
           />
           <img

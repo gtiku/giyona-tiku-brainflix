@@ -21,7 +21,8 @@ html {
 }
 
 body,
-input {
+input,
+textarea {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -30,7 +31,8 @@ input {
 }
 @media (min-width: 768px) {
   body,
-input {
+input,
+textarea {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
@@ -38,7 +40,6 @@ input {
 
 h1,
 h2,
-label,
 button {
   font-family: "Avenir Bold";
   font-weight: 700;
@@ -120,42 +121,30 @@ input:invalid {
   }
 }
 
-.pfp {
-  height: 3.6rem;
-  width: 3.6rem;
-  border-radius: 50%;
-}
-@media (min-width: 768px) {
-  .pfp {
-    height: 4rem;
-    width: 4rem;
-  }
-}
-
-.next-videos {
-  padding: 2rem;
-}
-@media (min-width: 768px) {
-  .next-videos {
-    padding: 2rem 8rem;
-  }
-}
-.next-videos__heading {
-  color: #E1E1E1;
-}
-.next-videos__box {
+.next-video__box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  padding-bottom: 0.8rem;
 }
-.next-videos__image {
+.next-video__image {
   border-radius: 4px;
   background-color: #E1E1E1;
   height: 6rem;
-  width: 12rem;
+  width: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1.2rem;
 }
-.next-videos__title {
+.next-video__title {
   font-weight: 700;
-  padding-bottom: 1.6rem;
-}/*# sourceMappingURL=NextVideos.css.map */
+  padding-bottom: 0.8rem;
+}
+.next-video__video-text {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}/*# sourceMappingURL=NextVideo.css.map */

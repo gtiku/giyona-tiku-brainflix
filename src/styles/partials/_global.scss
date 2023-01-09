@@ -15,7 +15,8 @@ html {
 }
 
 body,
-input {
+input,
+textarea {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -30,7 +31,6 @@ input {
 
 h1,
 h2,
-label,
 button {
   font-family: "Avenir Bold";
   font-weight: 700;
@@ -106,16 +106,5 @@ input {
     height: 4rem;
     padding: 1.6rem;
     padding-top: 2rem;
-  }
-}
-
-.pfp {
-  height: 3.6rem;
-  width: 3.6rem;
-  border-radius: 50%;
-
-  @include tablet {
-    height: 4rem;
-    width: 4rem;
   }
 }

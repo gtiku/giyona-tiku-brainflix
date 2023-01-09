@@ -5,7 +5,8 @@ import "./VideoComments.scss";
 
 const Comments = ({ videoComments }) => {
   return (
-    <div>
+    <div className="comments">
+      <h2 className="comments__total">{videoComments.length} Comments</h2>
       <CommentForm />
 
       <div>

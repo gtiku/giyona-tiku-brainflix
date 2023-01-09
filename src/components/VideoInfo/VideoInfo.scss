@@ -6,6 +6,12 @@
 .video-info {
   @include sectionPadding;
 
+  @include desktop {
+    margin: 0;
+    padding: 0;
+    align-self: flex-end;
+  }
+
   &__heading,
   &__stats {
     padding: 0.8rem 0;

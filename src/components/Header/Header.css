@@ -21,7 +21,8 @@ html {
 }
 
 body,
-input {
+input,
+textarea {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -30,7 +31,8 @@ input {
 }
 @media (min-width: 768px) {
   body,
-input {
+input,
+textarea {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
@@ -38,7 +40,6 @@ input {
 
 h1,
 h2,
-label,
 button {
   font-family: "Avenir Bold";
   font-weight: 700;
@@ -120,21 +121,11 @@ input:invalid {
   }
 }
 
-.pfp {
-  height: 3.6rem;
-  width: 3.6rem;
-  border-radius: 50%;
-}
-@media (min-width: 768px) {
-  .pfp {
-    height: 4rem;
-    width: 4rem;
-  }
-}
-
 input {
   width: 100%;
   margin-right: 1.6rem;
+  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
+  padding-right: 7rem;
 }
 @media (min-width: 768px) {
   input {
@@ -147,6 +138,7 @@ input {
 button {
   width: 28rem;
   margin: 0.4rem 0;
+  background: url("../../assets/images/icons/upload.svg") no-repeat 1.6rem;
 }
 @media (min-width: 768px) {
   button {
