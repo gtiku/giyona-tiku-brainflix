@@ -20,7 +20,8 @@ html {
   font-size: 62.5%;
 }
 
-body, input {
+body,
+input {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -28,7 +29,8 @@ body, input {
   color: #323232;
 }
 @media (min-width: 768px) {
-  body, input {
+  body,
+input {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
@@ -108,7 +110,7 @@ input:focus {
   outline: #0095FF solid 2px;
 }
 input:invalid {
-  outline: #D22D2D solid 1px;
+  outline: #d22d2d solid 1px;
 }
 @media (min-width: 768px) {
   input {

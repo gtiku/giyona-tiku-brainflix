@@ -8,6 +8,7 @@ const Video = ({ video }) => {
   const videoUrl = video.video;
   const videoPoster = video.image;
   const videoComments = video.comments;
+  console.log(videoComments);
   return (
     <div>
       <VideoPlayer videoUrl={videoUrl} videoPoster={videoPoster} />

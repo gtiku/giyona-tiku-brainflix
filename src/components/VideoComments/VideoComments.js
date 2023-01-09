@@ -3,12 +3,15 @@ import Comment from "../Comment/Comment";
 import CommentForm from "../CommentForm/CommentForm";
 import "./VideoComments.scss";
 
-const Comments = () => {
+const Comments = ({ videoComments }) => {
   return (
-    <div className="comments">
+    <div>
       <CommentForm />
-      <div className="comments__list">
-        <Comment />
+
+      <div>
+        {videoComments.map((comment) => (
+          <Comment comment={comment} />
+        ))}
       </div>
     </div>
   );

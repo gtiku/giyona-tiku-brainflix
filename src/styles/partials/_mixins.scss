@@ -18,3 +18,11 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin sectionPadding {
+  padding: 2rem;
+
+  @include tablet {
+    padding: 2rem 8rem;
+  }
+}

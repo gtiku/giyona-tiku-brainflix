@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+.next-videos {
+  @include sectionPadding;
+  &__heading {
+    color: $mercury;
+  }
+  &__box {
+    @include flex($justify: flex-start);
+  }
+
+  &__image {
+    border-radius: 4px;
+    background-color: $mercury;
+    height: 6rem;
+    width: 12rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    padding-bottom: 1.6rem;
+  }
+}

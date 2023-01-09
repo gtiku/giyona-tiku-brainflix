@@ -3,3 +3,65 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global";
 
+.comment {
+  padding: 1% 5% 2%;
+
+  @include flex($align: flex-start);
+  border-bottom: 0.2rem solid $mercury;
+  padding-bottom: 1rem;
+  margin: 2rem auto;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  &__pfp-box {
+    background-color: $mercury;
+    background-size: cover;
+    min-height: 3.6rem;
+    min-width: 3.6rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+
+    @include tablet {
+      height: 4.8rem;
+      width: 4.8rem;
+      margin: 2rem;
+    }
+  }
+
+  &__text-display {
+    @include flex($direction: column, $align: flex-start);
+    width: 20rem;
+
+    @include tablet {
+      width: 50rem;
+    }
+  }
+
+  &__name-date {
+    width: 100%;
+    padding-bottom: 0.4rem;
+    @include flex($justify: space-between);
+
+    @include tablet {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  &__name {
+    font-weight: 800;
+    padding-right: 4rem;
+  }
+
+  &__date {
+    color: $mercury;
+  }
+
+  &__comment {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin: 0.4rem 0;
+    text-align: left;
+  }
+}

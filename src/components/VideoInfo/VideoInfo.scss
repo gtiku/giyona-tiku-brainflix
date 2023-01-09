@@ -4,58 +4,57 @@
 @use "../../styles/partials/global";
 
 .video-info {
-    padding: 2rem;
+  @include sectionPadding;
+
+  &__heading,
+  &__stats {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid $mercury;
 
     @include tablet {
-        padding: 2rem 8rem;
+      border-bottom: none;
     }
+  }
 
-    &__heading, &__stats {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid $mercury;
+  &__stats {
+    color: $mercury;
+    @include flex($justify: flex-start);
 
-        @include tablet {
-            border-bottom: none;
-        }
+    @include tablet {
+      @include flex($justify: space-between);
+      border-bottom: 1px solid $mercury;
     }
+  }
 
-    &__stats {
-        color: $mercury;
-        @include flex($justify: flex-start);
+  &__creator-date,
+  &__engagement {
+    @include flex($direction: column, $align: flex-start);
 
-        @include tablet {
-            @include flex($justify: space-between);
-            border-bottom: 1px solid $mercury;
-        }
+    @include tablet {
+      @include flex($justify: flex-start);
     }
+  }
 
-    &__creator-date, &__engagement {
-        @include flex($direction: column, $align: flex-start);
+  &__engagement {
+    padding-left: 8rem;
+  }
 
-        @include tablet {
-            @include flex($justify: flex-start);
-        }
-    }
+  &__creator {
+    font-family: "Avenir Bold";
+    font-weight: 700;
+    color: $black;
+  }
 
-    &__engagement {
-        padding-left: 8rem;
-    }
+  &__creator,
+  &__views {
+    padding-right: 3.2rem;
+  }
 
-    &__creator {
-        font-family: "Avenir Bold";
-        font-weight: 700;
-        color: $black;
-    }
-
-    &__creator, &__views {
-        padding-right: 3.2rem;
-    }
-
-    &__description {
-        padding: 1.6rem 0;
-    }
+  &__description {
+    padding: 1.6rem 0;
+  }
 }
 
 img {
-    padding-right: 0.4rem;
+  padding-right: 0.4rem;
 }

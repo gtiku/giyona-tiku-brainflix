@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <Header />
       <Video video={currentVideo} />
-      <NextVideos />
+      <NextVideos nextVideos={nextVideos} />
     </div>
   );
 }

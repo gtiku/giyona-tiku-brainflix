@@ -14,7 +14,8 @@ html {
   font-size: 62.5%;
 }
 
-body, input {
+body,
+input {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -26,7 +27,6 @@ body, input {
     line-height: 2.2rem;
   }
 }
-
 
 h1,
 h2,
@@ -64,58 +64,58 @@ button {
   @include tablet {
     font-size: 1.2rem;
     line-height: 2rem;
-}
+  }
 }
 
 button {
-    background-color: $blue;
-    color: white;
-    border-radius: 0.4rem;
-    border: none;
-    height: 4rem;
-    width: 100%;
+  background-color: $blue;
+  color: white;
+  border-radius: 0.4rem;
+  border: none;
+  height: 4rem;
+  width: 100%;
 
-    &:hover {
-        background-color: $dark-blue;
-    }
+  &:hover {
+    background-color: $dark-blue;
+  }
 
-    @include tablet {
-        min-width: 15rem;
-        padding: 0 3.2rem;
-    }
+  @include tablet {
+    min-width: 15rem;
+    padding: 0 3.2rem;
+  }
 }
 
 input {
-    background-color: $alabaster;
-    color: $black;
-    border-radius: 0.4rem;
-    border: 1px solid $mercury;
-    height: 3.6rem;
-    padding: 1.2rem;
-    padding-top: 1.6rem;
+  background-color: $alabaster;
+  color: $black;
+  border-radius: 0.4rem;
+  border: 1px solid $mercury;
+  height: 3.6rem;
+  padding: 1.2rem;
+  padding-top: 1.6rem;
 
-    &:focus {
-        outline: $blue solid 2px;
-    }
+  &:focus {
+    outline: $blue solid 2px;
+  }
 
-    &:invalid {
-        outline: #D22D2D solid 1px;
-    }
+  &:invalid {
+    outline: #d22d2d solid 1px;
+  }
 
-    @include tablet {
-        height: 4rem;
-        padding: 1.6rem;
-        padding-top: 2rem;
-    }
+  @include tablet {
+    height: 4rem;
+    padding: 1.6rem;
+    padding-top: 2rem;
+  }
 }
 
 .pfp {
-    height: 3.6rem;
-    width: 3.6rem;
-    border-radius: 50%;
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 50%;
 
-    @include tablet {
-        height: 4rem;
-        width: 4rem;
-    }
+  @include tablet {
+    height: 4rem;
+    width: 4rem;
+  }
 }
