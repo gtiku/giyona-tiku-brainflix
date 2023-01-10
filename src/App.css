@@ -22,7 +22,8 @@ html {
 
 body,
 input,
-textarea {
+textarea,
+button {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -32,15 +33,15 @@ textarea {
 @media (min-width: 768px) {
   body,
 input,
-textarea {
+textarea,
+button {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
 }
 
 h1,
-h2,
-button {
+h2 {
   font-family: "Avenir Bold";
   font-weight: 700;
 }
@@ -98,38 +99,11 @@ button:hover {
   }
 }
 
-input {
-  background-color: #FAFAFA;
-  color: #323232;
-  border-radius: 0.4rem;
-  border: 1px solid #E1E1E1;
-  height: 3.6rem;
-  padding: 1.2rem;
-  padding-top: 1.6rem;
-}
-input:focus {
-  outline: #0095FF solid 2px;
-}
-input:invalid {
-  outline: #d22d2d solid 1px;
-}
-@media (min-width: 768px) {
-  input {
-    height: 4rem;
-    padding: 1.6rem;
-    padding-top: 2rem;
-  }
-}
-
 @media (min-width: 1280px) {
-  .flex-desktop {
+  .app__flex {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-  .flex-desktop__left {
-    border-right: 1px solid #E1E1E1;
-    align-self: flex-end;
   }
 }/*# sourceMappingURL=App.css.map */

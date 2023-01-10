@@ -4,12 +4,15 @@
 @use "../../styles/partials/global";
 
 .video-info {
-  @include sectionPadding;
+  padding: 2rem;
+  @include tablet {
+    padding: 0;
+    width: 60rem;
+    margin: 0 auto;
+  }
 
   @include desktop {
-    margin: 0;
-    padding: 0;
-    align-self: flex-end;
+    border-right: 1px solid $mercury;
   }
 
   &__heading,
@@ -24,10 +27,9 @@
 
   &__stats {
     color: $mercury;
-    @include flex($justify: flex-start);
+    @include flex($justify: space-between);
 
     @include tablet {
-      @include flex($justify: space-between);
       border-bottom: 1px solid $mercury;
     }
   }
@@ -42,7 +44,9 @@
   }
 
   &__engagement {
-    padding-left: 8rem;
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 
   &__creator {
@@ -54,10 +58,19 @@
   &__creator,
   &__views {
     padding-right: 3.2rem;
+    padding-bottom: 0.8rem;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
   }
 
   &__description {
     padding: 1.6rem 0;
+
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 }
 

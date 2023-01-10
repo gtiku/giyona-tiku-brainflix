@@ -5,8 +5,16 @@
 
 .comments {
   @include sectionPadding;
-
+  @include tablet {
+    width: 60rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+  }
   &__total {
-    padding-bottom: 2rem;
+    padding: 0 0 2rem 0;
+  }
+
+  @include desktop {
+    border-right: 1px solid $mercury;
   }
 }

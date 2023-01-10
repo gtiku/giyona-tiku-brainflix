@@ -1,7 +1,6 @@
 import React from "react";
 import "./Header.scss";
 import logo from "../../assets/images/BrainFlix-logo.svg";
-import profile_pic from "../../assets/images/Mohan-muruge.jpg";
 
 const Header = () => {
   return (
@@ -17,19 +16,11 @@ const Header = () => {
             placeholder="Search"
             className="header__searchbar"
           />
-          <img
-            src={profile_pic}
-            className="pfp header__pfp header__pfp--mobile"
-            alt="profile pic"
-          />
+          <div className="header__pfp-box header__pfp-box--mobile"></div>
         </div>
 
         <button className="header__upload">UPLOAD</button>
-        <img
-          src={profile_pic}
-          className="header__pfp header__pfp--tablet"
-          alt="profile pic"
-        />
+        <div className="header__pfp-box header__pfp-box--tablet"></div>
       </div>
     </div>
   );

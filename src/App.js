@@ -31,15 +31,15 @@ function App() {
     <div className="app">
       <Header />
       <VideoPlayer video={currentVideo} />
-      <div className="flex-desktop">
-        <div className="flex-desktop__left">
+      <div className="app__flex">
+        <div className="app__flex-left">
           <VideoInfo video={currentVideo} className="VideoInfo" />
           <VideoComments
             videoComments={currentVideo.comments}
             className="VideoComments"
           />
         </div>
-        <div className="flex-desktop__right">
+        <div className="app__flex-right">
           <NextVideosList
             nextVideos={nextVideos}
             handleNextVideoClick={handleNextVideoClick}

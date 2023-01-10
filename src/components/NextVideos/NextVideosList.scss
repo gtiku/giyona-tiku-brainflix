@@ -4,8 +4,22 @@
 @use "../../styles/partials/global";
 
 .next-videos {
-  @include sectionPadding;
+  padding: 2rem;
+  @include tablet {
+    width: 60rem;
+    padding: 0;
+    margin: 0 auto;
+  }
+
   &__heading {
     color: $mercury;
+  }
+
+  @include desktop {
+    margin: 0;
+    padding: 0;
+    padding-left: 2rem;
+    width: 40rem;
+    margin-top: -8rem;
   }
 }

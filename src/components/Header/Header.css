@@ -22,7 +22,8 @@ html {
 
 body,
 input,
-textarea {
+textarea,
+button {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -32,15 +33,15 @@ textarea {
 @media (min-width: 768px) {
   body,
 input,
-textarea {
+textarea,
+button {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
 }
 
 h1,
-h2,
-button {
+h2 {
   font-family: "Avenir Bold";
   font-weight: 700;
 }
@@ -100,12 +101,14 @@ button:hover {
 
 input {
   background-color: #FAFAFA;
+  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
   color: #323232;
   border-radius: 0.4rem;
   border: 1px solid #E1E1E1;
   height: 3.6rem;
-  padding: 1.2rem;
-  padding-top: 1.6rem;
+  padding: 1.6rem 1.2rem 1.2rem 4rem;
+  width: 100%;
+  margin: 0.8rem 1.6rem 1.2rem 0;
 }
 input:focus {
   outline: #0095FF solid 2px;
@@ -115,36 +118,23 @@ input:invalid {
 }
 @media (min-width: 768px) {
   input {
-    height: 4rem;
-    padding: 1.6rem;
-    padding-top: 2rem;
-  }
-}
-
-input {
-  width: 100%;
-  margin-right: 1.6rem;
-  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
-  padding-right: 7rem;
-}
-@media (min-width: 768px) {
-  input {
-    min-width: 2.4rem;
-    max-width: 18rem;
+    width: 18rem;
     margin-right: 2rem;
+    height: 4rem;
   }
 }
 
 button {
-  width: 28rem;
+  width: 16rem;
   margin: 0.4rem 0;
   background: url("../../assets/images/icons/upload.svg") no-repeat 1.6rem;
 }
 @media (min-width: 768px) {
   button {
-    min-width: 4rem;
-    max-width: 16rem;
+    padding-top: 0.4rem;
+    width: 8rem;
     margin-right: 2rem;
+    margin-top: -0.4rem;
   }
 }
 
@@ -158,6 +148,10 @@ button {
 @media (min-width: 768px) {
   .header {
     padding: 2rem 8rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -172,7 +166,7 @@ button {
 }
 @media (min-width: 1280px) {
   .header {
-    width: 98rem;
+    width: 116rem;
     margin: 0 auto;
   }
 }
@@ -188,23 +182,36 @@ button {
     display: inline-block;
   }
 }
-.header__pfp {
-  height: 3.6rem;
-  width: 3.6rem;
+.header__pfp-box {
+  background-color: #E1E1E1;
+  background-size: cover;
+  min-height: 3.6rem;
+  min-width: 3.6rem;
   border-radius: 50%;
+  background-image: url("../../assets/images/Mohan-muruge.jpg");
 }
-.header__pfp--tablet {
+@media (min-width: 768px) {
+  .header__pfp-box {
+    height: 4.8rem;
+    width: 4.8rem;
+  }
+}
+.header__pfp-box--tablet {
   display: none;
 }
 @media (min-width: 768px) {
-  .header__pfp {
-    height: 4rem;
-    width: 4rem;
+  .header__pfp-box {
+    padding: 0 0.4rem;
+    margin-left: 1.6rem;
+    margin-bottom: 0.8rem;
   }
-  .header__pfp--mobile {
+  .header__pfp-box--mobile {
     display: none;
   }
-  .header__pfp--tablet {
+  .header__pfp-box--tablet {
     display: inline-block;
   }
+}
+.header__upload {
+  margin: 0 0 0.2rem 0;
 }/*# sourceMappingURL=Header.css.map */

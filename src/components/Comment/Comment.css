@@ -22,7 +22,8 @@ html {
 
 body,
 input,
-textarea {
+textarea,
+button {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -32,15 +33,15 @@ textarea {
 @media (min-width: 768px) {
   body,
 input,
-textarea {
+textarea,
+button {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
 }
 
 h1,
-h2,
-button {
+h2 {
   font-family: "Avenir Bold";
   font-weight: 700;
 }
@@ -98,57 +99,14 @@ button:hover {
   }
 }
 
-input {
-  background-color: #FAFAFA;
-  color: #323232;
-  border-radius: 0.4rem;
-  border: 1px solid #E1E1E1;
-  height: 3.6rem;
-  padding: 1.2rem;
-  padding-top: 1.6rem;
-}
-input:focus {
-  outline: #0095FF solid 2px;
-}
-input:invalid {
-  outline: #d22d2d solid 1px;
-}
-@media (min-width: 768px) {
-  input {
-    height: 4rem;
-    padding: 1.6rem;
-    padding-top: 2rem;
-  }
-}
-
 .comment {
-  padding: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   border-bottom: 0.2rem solid #E1E1E1;
   padding-bottom: 1rem;
-  margin: 0.8rem auto;
-}
-@media (min-width: 768px) {
-  .comment {
-    padding: 2rem 8rem;
-  }
-}
-@media (min-width: 768px) {
-  .comment {
-    max-width: 60rem;
-    padding: 2rem 0;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 1280px) {
-  .comment {
-    margin: 0;
-    padding: 0;
-    align-self: flex-end;
-  }
+  margin: 1.6rem auto;
 }
 .comment__pfp-box {
   background-color: #E1E1E1;
@@ -178,7 +136,12 @@ input:invalid {
 }
 @media (min-width: 768px) {
   .comment__text-display {
-    max-width: 50rem;
+    width: 90%;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__text-display {
+    padding-right: 2rem;
   }
 }
 .comment__name-date {

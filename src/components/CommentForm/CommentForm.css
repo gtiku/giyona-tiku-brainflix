@@ -22,7 +22,8 @@ html {
 
 body,
 input,
-textarea {
+textarea,
+button {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -32,15 +33,15 @@ textarea {
 @media (min-width: 768px) {
   body,
 input,
-textarea {
+textarea,
+button {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
 }
 
 h1,
-h2,
-button {
+h2 {
   font-family: "Avenir Bold";
   font-weight: 700;
 }
@@ -98,29 +99,6 @@ button:hover {
   }
 }
 
-input {
-  background-color: #FAFAFA;
-  color: #323232;
-  border-radius: 0.4rem;
-  border: 1px solid #E1E1E1;
-  height: 3.6rem;
-  padding: 1.2rem;
-  padding-top: 1.6rem;
-}
-input:focus {
-  outline: #0095FF solid 2px;
-}
-input:invalid {
-  outline: #d22d2d solid 1px;
-}
-@media (min-width: 768px) {
-  input {
-    height: 4rem;
-    padding: 1.6rem;
-    padding-top: 2rem;
-  }
-}
-
 label {
   color: #AFAFAF;
   font-weight: 600;
@@ -136,6 +114,7 @@ textarea {
   height: 8rem;
   padding: 1.6rem;
   resize: none;
+  overflow: hidden;
   min-width: 22rem;
 }
 textarea:focus {
@@ -143,20 +122,26 @@ textarea:focus {
 }
 @media (min-width: 768px) {
   textarea {
-    min-width: 34rem;
-    max-width: 50rem;
+    width: 32rem;
     height: 4rem;
+    padding: 1.2rem 0 0 2rem;
     margin: 0;
   }
 }
 
-@media (min-width: 1280px) {
-  .comment-form {
+button {
+  width: 28rem;
+  margin: 0.4rem 0;
+  background: url("../../assets/images/icons/add_comment.svg") no-repeat 1.6rem;
+}
+@media (min-width: 768px) {
+  button {
+    min-width: 4rem;
+    width: 16rem;
     margin: 0;
-    padding: 0;
-    align-self: flex-end;
   }
 }
+
 .comment-form__form {
   display: flex;
   flex-direction: row;
@@ -173,8 +158,13 @@ textarea:focus {
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 2rem;
-    max-width: 60rem;
+    width: 60rem;
     margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .comment-form__form {
+    padding-right: 2rem;
   }
 }
 .comment-form__form-inputs {
@@ -199,17 +189,6 @@ textarea:focus {
   justify-content: center;
   align-items: flex-start;
 }
-.comment-form__button {
-  background: url("../../assets/images/icons/add_comment.svg") no-repeat 1.6rem;
-  width: 90%;
-}
-@media (min-width: 768px) {
-  .comment-form__button {
-    width: 16rem;
-    padding: 0;
-    margin: 0;
-  }
-}
 .comment-form__pfp-box {
   background-color: #E1E1E1;
   background-size: cover;
@@ -218,7 +197,7 @@ textarea:focus {
   border-radius: 50%;
   background-image: url("../../assets/images/Mohan-muruge.jpg");
   margin-right: 2rem;
-  margin-left: 2rem;
+  margin-left: 0.4rem;
 }
 @media (min-width: 768px) {
   .comment-form__pfp-box {

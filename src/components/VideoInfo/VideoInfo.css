@@ -22,7 +22,8 @@ html {
 
 body,
 input,
-textarea {
+textarea,
+button {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -32,15 +33,15 @@ textarea {
 @media (min-width: 768px) {
   body,
 input,
-textarea {
+textarea,
+button {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
 }
 
 h1,
-h2,
-button {
+h2 {
   font-family: "Avenir Bold";
   font-weight: 700;
 }
@@ -98,42 +99,19 @@ button:hover {
   }
 }
 
-input {
-  background-color: #FAFAFA;
-  color: #323232;
-  border-radius: 0.4rem;
-  border: 1px solid #E1E1E1;
-  height: 3.6rem;
-  padding: 1.2rem;
-  padding-top: 1.6rem;
-}
-input:focus {
-  outline: #0095FF solid 2px;
-}
-input:invalid {
-  outline: #d22d2d solid 1px;
-}
-@media (min-width: 768px) {
-  input {
-    height: 4rem;
-    padding: 1.6rem;
-    padding-top: 2rem;
-  }
-}
-
 .video-info {
   padding: 2rem;
 }
 @media (min-width: 768px) {
   .video-info {
-    padding: 2rem 8rem;
+    padding: 0;
+    width: 60rem;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1280px) {
   .video-info {
-    margin: 0;
-    padding: 0;
-    align-self: flex-end;
+    border-right: 1px solid #E1E1E1;
   }
 }
 .video-info__heading, .video-info__stats {
@@ -149,15 +127,11 @@ input:invalid {
   color: #E1E1E1;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 @media (min-width: 768px) {
   .video-info__stats {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid #E1E1E1;
   }
 }
@@ -175,8 +149,10 @@ input:invalid {
     align-items: center;
   }
 }
-.video-info__engagement {
-  padding-left: 8rem;
+@media (min-width: 1280px) {
+  .video-info__engagement {
+    padding-right: 2rem;
+  }
 }
 .video-info__creator {
   font-family: "Avenir Bold";
@@ -185,9 +161,20 @@ input:invalid {
 }
 .video-info__creator, .video-info__views {
   padding-right: 3.2rem;
+  padding-bottom: 0.8rem;
+}
+@media (min-width: 768px) {
+  .video-info__creator, .video-info__views {
+    padding-bottom: 0;
+  }
 }
 .video-info__description {
   padding: 1.6rem 0;
+}
+@media (min-width: 1280px) {
+  .video-info__description {
+    padding-right: 2rem;
+  }
 }
 
 img {
