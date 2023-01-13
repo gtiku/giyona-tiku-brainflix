@@ -1,10 +1,10 @@
 import React from "react";
 import "./NextVideo.scss";
 
-const NextVideo = ({ video, handleNextVideoClick }) => {
+const NextVideo = ({ video }) => {
   return (
     <div className="next-video__box">
-      <div className="next-video__image-box" onClick={handleNextVideoClick}>
+      <div className="next-video__image-box">
         <img
           className="next-video__image"
           src={video.image}

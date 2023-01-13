@@ -18,8 +18,8 @@ const HomeView = () => {
   }
 
   useEffect(() => {
-    let API_URL = "https://project-2-api.herokuapp.com/videos/";
-    let API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
+    const API_URL = "https://project-2-api.herokuapp.com/videos/";
+    const API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
 
     const getVideos = async () => {
       try {
