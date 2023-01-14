@@ -3,65 +3,21 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global";
 
-label {
-  color: $silver;
-  font-weight: 600;
-}
-
-textarea {
-  border: 1px solid $mercury;
-  background-color: $alabaster;
-  border-radius: 5px;
-  font-family: "Avenir Regular";
-  font-weight: 400;
-  margin: 0 0 1.2rem;
-  height: 8rem;
-  padding: 1.6rem;
-  resize: none;
-  overflow: hidden;
-  min-width: 22rem;
-
-  &:focus {
-    outline: $blue solid 2px;
-  }
-
-  @include tablet {
-    width: 32rem;
-    height: 4rem;
-    padding: 1.2rem 0 0 2rem;
-    margin: 0;
-  }
-}
-
-button {
-  width: 28rem;
-  margin: 0.4rem 0;
-  background: url("../../assets/images/icons/add_comment.svg") no-repeat 1.6rem;
-
-  @include tablet {
-    min-width: 4rem;
-    width: 16rem;
-    margin: 0;
-  }
-}
-
 .comment-form {
-  &__form {
-    @include flex($align: flex-start);
-    border-bottom: 0.2rem solid $mercury;
-    padding-bottom: 0.8rem;
-    width: 100%;
+  @include flex($align: flex-start);
+  border-bottom: 0.2rem solid $mercury;
+  padding-bottom: 0.8rem;
+  width: 100%;
 
-    @include tablet {
-      @include flex($justify: space-between, $align: flex-end);
-      padding-bottom: 2rem;
-      width: 60rem;
-      margin: 0 auto;
-    }
+  @include tablet {
+    @include flex($justify: space-between, $align: flex-end);
+    padding-bottom: 2rem;
+    width: 60rem;
+    margin: 0 auto;
+  }
 
-    @include desktop {
-      padding-right: 2rem;
-    }
+  @include desktop {
+    padding-right: 2rem;
   }
 
   &__form-inputs {
@@ -74,8 +30,35 @@ button {
     }
   }
 
-  &__label-textarea {
+  &__label {
     @include flex($direction: column, $align: flex-start);
+    color: $silver;
+    font-weight: 600;
+  }
+
+  &__textarea {
+    border: 1px solid $mercury;
+    background-color: $alabaster;
+    border-radius: 5px;
+    font-family: "Avenir Regular";
+    font-weight: 400;
+    margin: 0 0 1.2rem;
+    height: 8rem;
+    padding: 1.6rem;
+    resize: none;
+    overflow: hidden;
+    min-width: 22rem;
+
+    &:focus {
+      outline: $blue solid 2px;
+    }
+
+    @include tablet {
+      width: 36rem;
+      height: 4rem;
+      padding: 1.2rem 0 0 2rem;
+      margin: 0;
+    }
   }
 
   &__pfp-box {

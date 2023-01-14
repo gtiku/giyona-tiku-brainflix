@@ -12,7 +12,6 @@ const HomeView = () => {
   const [nextVideos, setNextVideos] = useState(null);
 
   let { videoID } = useParams();
-
   if (videoID === undefined) {
     videoID = "9c268c0a-83dc-4b96-856a-bb5ded2772b1";
   }
@@ -42,7 +41,7 @@ const HomeView = () => {
     getNextVideos();
   }, [videoID]);
 
-  if (!video || !nextVideos) {
+  while (!video || !nextVideos) {
     return <p>Loading...</p>;
   }
 

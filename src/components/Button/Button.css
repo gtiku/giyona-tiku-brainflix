@@ -77,26 +77,30 @@ label {
   }
 }
 
-.comments {
-  padding: 2rem;
+button {
+  background-color: #0095ff;
+  color: white;
+  border-radius: 0.4rem;
+  border: none;
+  height: 4rem;
+  width: 100%;
+}
+button:hover {
+  background-color: #0065ad;
 }
 @media (min-width: 768px) {
-  .comments {
-    padding: 2rem 8rem;
+  button {
+    min-width: 4rem;
+    width: 16rem;
+    margin: 0;
   }
 }
-@media (min-width: 768px) {
-  .comments {
-    width: 60rem;
-    padding: 2rem 0;
-    margin: 0 auto;
-  }
+
+img {
+  float: left;
+  padding-left: 0.8rem;
 }
-.comments__total {
-  padding: 0 0 2rem 0;
-}
-@media (min-width: 1280px) {
-  .comments {
-    border-right: 1px solid #e1e1e1;
-  }
-}/*# sourceMappingURL=VideoComments.css.map */
+
+p {
+  padding: 0.4rem 3rem 0 0;
+}/*# sourceMappingURL=Button.css.map */

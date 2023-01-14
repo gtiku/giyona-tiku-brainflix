@@ -16,8 +16,7 @@ html {
 
 body,
 input,
-textarea,
-button {
+textarea {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -56,31 +55,12 @@ h2 {
   }
 }
 
-label,
-button {
+label {
   font-size: 1rem;
   line-height: 2rem;
 
   @include tablet {
     font-size: 1.2rem;
     line-height: 2rem;
-  }
-}
-
-button {
-  background-color: $blue;
-  color: white;
-  border-radius: 0.4rem;
-  border: none;
-  height: 4rem;
-  width: 100%;
-
-  &:hover {
-    background-color: $dark-blue;
-  }
-
-  @include tablet {
-    min-width: 15rem;
-    padding: 0 3.2rem;
   }
 }

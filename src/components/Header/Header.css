@@ -22,8 +22,7 @@ html {
 
 body,
 input,
-textarea,
-button {
+textarea {
   font-family: "Avenir Regular";
   font-size: 1.3rem;
   font-weight: 400;
@@ -33,8 +32,7 @@ button {
 @media (min-width: 768px) {
   body,
 input,
-textarea,
-button {
+textarea {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
@@ -68,73 +66,14 @@ h2 {
   }
 }
 
-label,
-button {
+label {
   font-size: 1rem;
   line-height: 2rem;
 }
 @media (min-width: 768px) {
-  label,
-button {
+  label {
     font-size: 1.2rem;
     line-height: 2rem;
-  }
-}
-
-button {
-  background-color: #0095FF;
-  color: white;
-  border-radius: 0.4rem;
-  border: none;
-  height: 4rem;
-  width: 100%;
-}
-button:hover {
-  background-color: #0065AD;
-}
-@media (min-width: 768px) {
-  button {
-    min-width: 15rem;
-    padding: 0 3.2rem;
-  }
-}
-
-input {
-  background-color: #FAFAFA;
-  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
-  color: #323232;
-  border-radius: 0.4rem;
-  border: 1px solid #E1E1E1;
-  height: 3.6rem;
-  padding: 1.6rem 1.2rem 1.2rem 4rem;
-  width: 100%;
-  margin: 0.8rem 1.6rem 1.2rem 0;
-}
-input:focus {
-  outline: #0095FF solid 2px;
-}
-input:invalid {
-  outline: #d22d2d solid 1px;
-}
-@media (min-width: 768px) {
-  input {
-    width: 18rem;
-    margin-right: 2rem;
-    height: 4rem;
-  }
-}
-
-button {
-  width: 16rem;
-  margin: 0.4rem 0;
-  background: url("../../assets/images/icons/upload.svg") no-repeat 1.6rem;
-}
-@media (min-width: 768px) {
-  button {
-    padding-top: 0.4rem;
-    width: 8rem;
-    margin-right: 2rem;
-    margin-top: -0.4rem;
   }
 }
 
@@ -183,7 +122,7 @@ button {
   }
 }
 .header__pfp-box {
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
   background-size: cover;
   min-height: 3.6rem;
   min-width: 3.6rem;
@@ -212,6 +151,26 @@ button {
     display: inline-block;
   }
 }
-.header__upload {
-  margin: 0 0 0.2rem 0;
+.header__searchbar {
+  background-color: #fafafa;
+  border-radius: 0.4rem;
+  border: 1px solid #e1e1e1;
+  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
+  height: 3.6rem;
+  padding: 1.6rem 1.2rem 1.2rem 4rem;
+  width: 100%;
+  margin: 0.8rem 1.6rem 1.2rem 0;
+}
+.header__searchbar:focus {
+  outline: #0095ff solid 2px;
+}
+.header__searchbar:invalid {
+  outline: #d22d2d solid 1px;
+}
+@media (min-width: 768px) {
+  .header__searchbar {
+    width: 18rem;
+    margin-right: 2rem;
+    height: 4rem;
+  }
 }/*# sourceMappingURL=Header.css.map */

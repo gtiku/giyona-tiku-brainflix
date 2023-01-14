@@ -1,27 +1,36 @@
-import React from "react";
-import pfp from "../../assets/images/Mohan-muruge.jpg";
+import React, { useState } from "react";
 import "./CommentForm.scss";
+import add_comment from "../../assets/images/icons/add_comment.svg";
+import Button from "../Button/Button";
 
 const CommentForm = () => {
+  const [comment, setComment] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <div className="comment-form">
-      <form className="comment-form__form">
-        <div className="comment-form__pfp-box"></div>
+    <form className="comment-form" onSubmit={(e) => handleSubmit(e)}>
+      <div className="comment-form__pfp-box"></div>
 
-        <div className="comment-form__form-inputs">
-          <div className="comment-form__label-textarea">
-            <label name="comment">JOIN THE CONVERSATION</label>
-            <textarea
-              name="comment"
-              placeholder="Add a new comment"
-              required
-            ></textarea>
-          </div>
-
-          <button className="comment-form__button">COMMENT</button>
-        </div>
-      </form>
-    </div>
+      <div className="comment-form__form-inputs">
+        <label name="comment" className="comment-form__label">
+          JOIN THE CONVERSATION
+          <textarea
+            name="comment"
+            placeholder="Add a new comment"
+            className="comment-form__textarea"
+            value={comment}
+            onChange={(event) => setComment(event.target.value)}
+            required
+          ></textarea>
+        </label>
+        <Button
+          icon={add_comment}
+          text={"COMMENT"}
+          className="comment-form__button"
+        />
+      </div>
+    </form>
   );
 };
 

@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global";
+
+button {
+  @include button($blue);
+}
+
+img {
+  float: left;
+  padding-left: 0.8rem;
+}
+
+p {
+  padding: 0.4rem 3rem 0 0;
+}

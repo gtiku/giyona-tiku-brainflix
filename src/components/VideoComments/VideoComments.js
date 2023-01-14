@@ -11,7 +11,7 @@ const Comments = ({ videoComments }) => {
 
       <div>
         {videoComments.map((comment) => (
-          <Comment comment={comment} />
+          <Comment key={comment.id} comment={comment} />
         ))}
       </div>
     </div>

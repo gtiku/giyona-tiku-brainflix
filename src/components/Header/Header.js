@@ -2,9 +2,13 @@ import React from "react";
 import "./Header.scss";
 import logo from "../../assets/images/BrainFlix-logo.svg";
 
+import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+import upload from "../../assets/images/icons/upload.svg";
+
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <a href="./">
         <img src={logo} className="header__logo" alt="brainflix logo" />
       </a>
@@ -18,11 +22,13 @@ const Header = () => {
           />
           <div className="header__pfp-box header__pfp-box--mobile"></div>
         </div>
+        <Link to="/upload">
+          <Button icon={upload} text={"UPLOAD"} className="header__upload" />
+        </Link>
 
-        <button className="header__upload">UPLOAD</button>
         <div className="header__pfp-box header__pfp-box--tablet"></div>
       </div>
-    </div>
+    </header>
   );
 };
 

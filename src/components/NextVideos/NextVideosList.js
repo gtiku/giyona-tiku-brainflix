@@ -10,7 +10,7 @@ const NextVideosList = ({ nextVideos }) => {
       {nextVideos.map((video) => (
         <div className="next-videos__box">
           <Link to={`/videos/${video.id}`}>
-            <NextVideo key={video.id} video={video} />
+            <NextVideo video={video} key={video.id} />
           </Link>
         </div>
       ))}

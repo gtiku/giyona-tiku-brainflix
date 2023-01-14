@@ -3,45 +3,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global";
 
-input {
-  background-color: $alabaster;
-  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
-  color: $black;
-  border-radius: 0.4rem;
-  border: 1px solid $mercury;
-  height: 3.6rem;
-  padding: 1.6rem 1.2rem 1.2rem 4rem;
-  width: 100%;
-  margin: 0.8rem 1.6rem 1.2rem 0;
-
-  &:focus {
-    outline: $blue solid 2px;
-  }
-
-  &:invalid {
-    outline: #d22d2d solid 1px;
-  }
-
-  @include tablet {
-    width: 18rem;
-    margin-right: 2rem;
-    height: 4rem;
-  }
-}
-
-button {
-  width: 16rem;
-  margin: 0.4rem 0;
-  background: url("../../assets/images/icons/upload.svg") no-repeat 1.6rem;
-
-  @include tablet {
-    padding-top: 0.4rem;
-    width: 8rem;
-    margin-right: 2rem;
-    margin-top: -0.4rem;
-  }
-}
-
 .header {
   @include sectionPadding;
   @include flex($direction: column);
@@ -90,7 +51,18 @@ button {
     }
   }
 
-  &__upload {
-    margin: 0 0 0.2rem 0;
+  &__searchbar {
+    @include input;
+    background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
+    height: 3.6rem;
+    padding: 1.6rem 1.2rem 1.2rem 4rem;
+    width: 100%;
+    margin: 0.8rem 1.6rem 1.2rem 0;
+
+    @include tablet {
+      width: 18rem;
+      margin-right: 2rem;
+      height: 4rem;
+    }
   }
 }
