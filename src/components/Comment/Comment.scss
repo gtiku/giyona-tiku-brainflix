@@ -20,7 +20,7 @@
 
   &__text-display {
     @include flex($direction: column, $align: flex-start);
-    min-width: 20rem;
+    width: 100%;
 
     @include tablet {
       width: 90%;

@@ -1,7 +1,11 @@
 import React from "react";
-import "./Comment.scss";
+import { useParams } from "react-router";
 
-const Comment = ({ comment }) => {
+import "./Comment.scss";
+import delete_icon from "../../assets/images/icons/delete.svg";
+
+const Comment = ({ comment, deleteComment }) => {
+  let { videoID } = useParams();
   return (
     <div className="comment">
       <div className="comment__pfp-box"></div>
@@ -13,6 +17,14 @@ const Comment = ({ comment }) => {
           </p>
         </div>
         <p className="commment__comment">{comment.comment}</p>
+      </div>
+      <div>
+        <img
+          src={delete_icon}
+          alt="delete comment"
+          className="commment__delete"
+          onClick={() => deleteComment(videoID, comment)}
+        />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import "./Button.scss";
 
 const Button = ({ icon, text }) => {
   return (
-    <button>
+    <button type="submit">
       <img src={icon} alt={text} />
       <p>{text}</p>
     </button>

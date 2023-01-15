@@ -125,11 +125,12 @@ label {
   align-items: flex-start;
   color: #afafaf;
   font-weight: 600;
+  width: 100%;
 }
 .comment-form__textarea {
-  border: 1px solid #e1e1e1;
   background-color: #fafafa;
-  border-radius: 5px;
+  border-radius: 0.4rem;
+  border: 1px solid #e1e1e1;
   font-family: "Avenir Regular";
   font-weight: 400;
   margin: 0 0 1.2rem;
@@ -137,10 +138,13 @@ label {
   padding: 1.6rem;
   resize: none;
   overflow: hidden;
-  min-width: 22rem;
+  width: 100%;
 }
 .comment-form__textarea:focus {
   outline: #0095ff solid 2px;
+}
+.comment-form__textarea:invalid {
+  outline: #d22d2d solid 1px;
 }
 @media (min-width: 768px) {
   .comment-form__textarea {

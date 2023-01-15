@@ -11,15 +11,15 @@ const HomeView = () => {
   const [video, setVideo] = useState(null);
   const [nextVideos, setNextVideos] = useState(null);
 
+  const API_URL = "https://project-2-api.herokuapp.com/videos/";
+  const API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
+
   let { videoID } = useParams();
   if (videoID === undefined) {
     videoID = "9c268c0a-83dc-4b96-856a-bb5ded2772b1";
   }
 
   useEffect(() => {
-    const API_URL = "https://project-2-api.herokuapp.com/videos/";
-    const API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
-
     const getVideos = async () => {
       try {
         const { data } = await axios.get(API_URL + videoID + API_KEY);
@@ -28,7 +28,6 @@ const HomeView = () => {
         console.error(error);
       }
     };
-    getVideos();
 
     const getNextVideos = async () => {
       try {
@@ -38,6 +37,8 @@ const HomeView = () => {
         console.error(error);
       }
     };
+
+    getVideos();
     getNextVideos();
   }, [videoID]);
 
@@ -46,21 +47,18 @@ const HomeView = () => {
   }
 
   return (
-    <div>
+    <main>
       <VideoPlayer video={video} />
       <div className="app__flex">
         <div className="app__flex-left">
           <VideoInfo video={video} className="VideoInfo" />
-          <VideoComments
-            videoComments={video.comments}
-            className="VideoComments"
-          />
+          <VideoComments video={video} className="VideoComments" />
         </div>
         <div className="app__flex-right">
           <NextVideosList nextVideos={nextVideos} className="NextVideoList" />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

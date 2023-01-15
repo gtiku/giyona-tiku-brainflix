@@ -110,7 +110,7 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  min-width: 20rem;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .comment__text-display {
