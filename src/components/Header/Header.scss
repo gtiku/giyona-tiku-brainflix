@@ -6,14 +6,21 @@
 .header {
   @include sectionPadding;
   @include flex($direction: column);
+  margin-bottom: 1.6rem;
 
   @include tablet {
     @include flex($justify: space-between);
   }
 
   @include desktop {
-    width: 116rem;
-    margin: 0 auto;
+    width: 100rem;
+    margin: 1.6rem auto;
+  }
+
+  &__logo {
+    @include tablet {
+      margin-top: 0.4rem;
+    }
   }
 
   &__flex {
@@ -52,6 +59,10 @@
         display: inline-block;
       }
     }
+
+    @include tablet {
+      margin-left: 3rem;
+    }
   }
 
   &__searchbar {
@@ -62,13 +73,21 @@
     margin: 0.8rem 1.6rem 0.8rem 0;
 
     @include tablet {
-      width: 18rem;
+      max-width: 22rem;
+      margin-right: 2rem;
+      height: 4rem;
+    }
+
+    @include desktop {
+      max-width: 32rem;
       margin-right: 2rem;
       height: 4rem;
     }
   }
 
   &__upload {
-    margin-bottom: 0.4rem;
+    @include tablet {
+      margin-left: 1.6rem;
+    }
   }
 }

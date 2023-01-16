@@ -78,25 +78,26 @@ label {
 }
 
 .comments {
-  padding: 2rem;
+  margin: 2rem;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .comments {
-    padding: 2rem 8rem;
+    margin: 2rem 4rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .comments {
-    width: 60rem;
+    margin: 0 0 0 auto;
+    width: 70rem;
     padding: 2rem 0;
-    margin: 0 auto;
   }
 }
 .comments__total {
   padding: 0 0 2rem 0;
 }
-@media (min-width: 1280px) {
-  .comments {
-    border-right: 1px solid #e1e1e1;
+@media (min-width: 768px) {
+  .comments__total {
+    padding-top: 2rem;
   }
 }/*# sourceMappingURL=VideoComments.css.map */

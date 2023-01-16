@@ -4,12 +4,13 @@
 @use "../../styles/partials/global";
 
 .upload-form {
-  width: 100%;
   border-top: 0.2rem solid $mercury;
+
   @include sectionPadding;
 
   @include desktop {
-    width: 116rem;
+    margin-left: 0;
+    width: 100rem;
     margin: 0 auto;
   }
 
@@ -101,7 +102,7 @@
 
     @include tablet {
       height: 8rem;
-      padding: 1.2rem 0 0 2rem;
+      padding: 1.2rem 0 0 1.2rem;
       margin: 0;
     }
   }

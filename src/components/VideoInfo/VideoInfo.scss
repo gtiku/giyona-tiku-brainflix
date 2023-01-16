@@ -4,15 +4,11 @@
 @use "../../styles/partials/global";
 
 .video-info {
-  padding: 2rem;
-  @include tablet {
-    padding: 0;
-    width: 60rem;
-    margin: 0 auto;
-  }
+  @include sectionPadding;
 
   @include desktop {
-    border-right: 1px solid $mercury;
+    margin: 0 0 0 auto;
+    width: 70rem;
   }
 
   &__heading,
@@ -23,6 +19,9 @@
     @include tablet {
       border-bottom: none;
     }
+  }
+  &__heading {
+    padding-top: 3rem;
   }
 
   &__stats {
@@ -45,6 +44,7 @@
 
   &__engagement {
     @include desktop {
+      width: 68.8;
       padding-right: 2rem;
     }
   }
@@ -66,7 +66,7 @@
   }
 
   &__description {
-    padding: 1.6rem 0;
+    padding-top: 1.6rem;
 
     @include desktop {
       padding-right: 2rem;

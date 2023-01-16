@@ -11,8 +11,7 @@
 
   @include tablet {
     @include flex($justify: space-between, $align: flex-end);
-    padding-bottom: 2rem;
-    width: 60rem;
+    padding-bottom: 3rem;
     margin: 0 auto;
   }
 
@@ -53,7 +52,7 @@
     }
 
     @include tablet {
-      width: 32rem;
+      width: 44rem;
       height: 4rem;
       padding: 1.2rem 0 0 2rem;
       margin: 0;
@@ -70,6 +69,7 @@
   &__button-box {
     width: 100%;
     @include tablet {
+      display: inline;
       align-self: flex-end;
     }
   }

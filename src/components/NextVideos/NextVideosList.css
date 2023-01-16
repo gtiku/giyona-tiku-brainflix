@@ -78,17 +78,32 @@ label {
 }
 
 .next-videos {
-  padding: 2rem;
+  margin: 2rem;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .next-videos {
-    width: 60rem;
-    padding: 0;
-    margin: 0 auto;
+    margin: 2rem 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .next-videos {
+    margin-right: auto;
   }
 }
 .next-videos__heading {
-  color: #e1e1e1;
+  color: #afafaf;
+  margin: -1rem 0 1.6rem;
+}
+@media (min-width: 768px) {
+  .next-videos__heading {
+    margin: 3rem 0 2.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .next-videos__heading {
+    margin: 0 0 2rem 0;
+  }
 }
 .next-videos a {
   text-decoration: none;
@@ -97,9 +112,8 @@ label {
 @media (min-width: 1280px) {
   .next-videos {
     margin: 0;
-    padding: 0;
+    padding: 2rem 0 0 0;
     padding-left: 2rem;
-    width: 40rem;
-    margin-top: -8rem;
+    border-left: 1px solid #e1e1e1;
   }
 }/*# sourceMappingURL=NextVideosList.css.map */

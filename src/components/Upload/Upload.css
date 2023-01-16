@@ -78,18 +78,19 @@ label {
 }
 
 .upload-form {
-  width: 100%;
   border-top: 0.2rem solid #e1e1e1;
-  padding: 2rem;
+  margin: 2rem;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .upload-form {
-    padding: 2rem 8rem;
+    margin: 2rem 4rem;
   }
 }
 @media (min-width: 1280px) {
   .upload-form {
-    width: 116rem;
+    margin-left: 0;
+    width: 100rem;
     margin: 0 auto;
   }
 }
@@ -198,7 +199,7 @@ label {
 @media (min-width: 768px) {
   .upload-form__textarea {
     height: 8rem;
-    padding: 1.2rem 0 0 2rem;
+    padding: 1.2rem 0 0 1.2rem;
     margin: 0;
   }
 }

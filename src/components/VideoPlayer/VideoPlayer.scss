@@ -15,11 +15,15 @@
   }
 
   &__player {
-    min-height: 18rem;
     width: 100%;
+    height: auto;
 
     @include tablet {
-      padding: 0 8rem;
+      padding: 0 4rem;
+    }
+
+    @include desktop {
+      padding: 0 6rem;
     }
   }
 }

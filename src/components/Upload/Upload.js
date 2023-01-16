@@ -78,6 +78,7 @@ const Upload = () => {
                 type="text"
                 name="title"
                 id="title"
+                placeholder="Add a title to your video"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className={`upload-form__input ${addClassTitle}`}
@@ -88,6 +89,7 @@ const Upload = () => {
               <textarea
                 name="description"
                 id="description"
+                placeholder="Add a description to your video"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 className={`upload-form__textarea ${addClassDescription}`}

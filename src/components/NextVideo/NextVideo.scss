@@ -7,28 +7,47 @@
   &__box {
     @include flex($justify: flex-start, $align: flex-start);
     padding-bottom: 0.8rem;
+
+    @include tablet {
+      padding-bottom: 1.6rem;
+    }
   }
 
   &__image {
-    border-radius: 4px;
-    background-color: $mercury;
-    height: 6rem;
-    width: 9rem;
+    border-radius: 0.6rem;
     object-fit: cover;
+    background-position: center;
+    background-color: $mercury;
+    width: 10rem;
+    height: 6.8rem;
     margin-right: 1.2rem;
+    -webkit-background-origin: border;
+
+    @include tablet {
+      width: 14rem;
+      height: 8rem;
+      margin-right: 1.6rem;
+    }
   }
 
   &__title {
     font-weight: 700;
-    padding-bottom: 0.8rem;
+    width: 18rem;
+    padding-bottom: 1.6rem;
   }
 
   &__video-text {
     margin: 0;
+    // @include flex(
+    //   $direction: column,
+    //   $justify: space-between,
+    //   $align: flex-start
+    // );
+
     @include flex(
       $direction: column,
-      $justify: space-between,
-      $align: flex-start
+      $justify: flex-start,
+      $align: space-between
     );
   }
 }

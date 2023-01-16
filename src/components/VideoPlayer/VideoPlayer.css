@@ -88,11 +88,16 @@ label {
   }
 }
 .video__player {
-  min-height: 18rem;
   width: 100%;
+  height: auto;
 }
 @media (min-width: 768px) {
   .video__player {
-    padding: 0 8rem;
+    padding: 0 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .video__player {
+    padding: 0 6rem;
   }
 }/*# sourceMappingURL=VideoPlayer.css.map */

@@ -6,7 +6,7 @@
 .app {
   @include desktop {
     &__flex {
-      @include flex;
+      @include flex($align: flex-start);
     }
   }
 }

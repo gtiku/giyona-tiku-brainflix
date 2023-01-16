@@ -6,7 +6,7 @@ import "./NextVideosList.scss";
 const NextVideosList = ({ nextVideos }) => {
   return (
     <div className="next-videos">
-      <h2 className="next-videos__heading">NEXT VIDEOS</h2>
+      <h3 className="next-videos__heading">NEXT VIDEOS</h3>
       {nextVideos.map((video) => (
         <div className="next-videos__box">
           <Link to={`/videos/${video.id}`}>

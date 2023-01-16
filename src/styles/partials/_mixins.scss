@@ -20,10 +20,11 @@
 }
 
 @mixin sectionPadding {
-  padding: 2rem;
+  margin: 2rem;
+  margin-bottom: 0;
 
   @include tablet {
-    padding: 2rem 8rem;
+    margin: 2rem 4rem;
   }
 }
 
