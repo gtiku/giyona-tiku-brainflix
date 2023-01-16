@@ -1,11 +1,11 @@
 import React from "react";
 import "./Button.scss";
 
-const Button = ({ icon, text }) => {
+const Button = ({ icon, text, className }) => {
   return (
-    <button type="submit">
-      <img src={icon} alt={text} />
-      <p>{text}</p>
+    <button type="submit" className={`button ${className}`}>
+      <img src={icon} alt={text} className="button__icon" />
+      <p className="button__text">{text}</p>
     </button>
   );
 };

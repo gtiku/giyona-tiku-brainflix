@@ -1,14 +1,14 @@
-import React from "react";
-import { useParams } from "react-router";
+import React, { useState } from "react";
 
 import "./Comment.scss";
 import delete_icon from "../../assets/images/icons/delete.svg";
 
 const Comment = ({ comment, deleteComment }) => {
-  let { videoID } = useParams();
+  const [addClass, setAddClass] = useState("");
   return (
-    <div className="comment">
+    <div className={`comment  ${addClass}`}>
       <div className="comment__pfp-box"></div>
+
       <div className="comment__text-display">
         <div className="comment__name-date">
           <p className="comment__name">{comment.name}</p>
@@ -16,15 +16,19 @@ const Comment = ({ comment, deleteComment }) => {
             {new Date(comment.timestamp).toLocaleDateString()}
           </p>
         </div>
-        <p className="commment__comment">{comment.comment}</p>
-      </div>
-      <div>
-        <img
-          src={delete_icon}
-          alt="delete comment"
-          className="commment__delete"
-          onClick={() => deleteComment(videoID, comment)}
-        />
+
+        <div className="comment__comment-delete">
+          <p className="comment__comment">{comment.comment}</p>
+          <img
+            src={delete_icon}
+            alt="delete comment"
+            className="comment__delete"
+            onClick={() => {
+              setAddClass("comment--delete");
+              deleteComment(comment);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

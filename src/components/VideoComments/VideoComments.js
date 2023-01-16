@@ -19,16 +19,10 @@ const Comments = ({ video }) => {
     }
   };
 
-  const deleteComment = async (videoID, deletedComment) => {
+  const deleteComment = async (deletedComment) => {
     try {
       await axios.delete(
-        API_URL + `${videoID}/comments/${deletedComment.id}` + API_KEY,
-        {
-          name: deletedComment.name,
-          comment: deletedComment.comment,
-          id: deletedComment.id,
-          timestamp: deletedComment.timestamp,
-        }
+        `${API_URL}${video.id}/comments/${deletedComment.id}${API_KEY}`
       );
       updateComments();
     } catch (error) {

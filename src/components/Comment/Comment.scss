@@ -4,6 +4,10 @@
 @use "../../styles/partials/global";
 
 .comment {
+  &--delete {
+    color: rgb(241, 168, 168);
+  }
+
   @include flex($align: flex-start);
   border-bottom: 0.2rem solid $mercury;
   padding-bottom: 1rem;
@@ -50,10 +54,31 @@
     color: $mercury;
   }
 
+  &__comment-delete {
+    @include flex($justify: space-between);
+
+    @include tablet {
+      @include flex($justify: space-between, $align: flex-end);
+    }
+  }
+
   &__comment {
     font-size: 1.4rem;
     line-height: 1.6rem;
     margin: 0.4rem 0;
     text-align: left;
+
+    @include tablet {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__delete {
+    margin-left: 1.6rem;
+
+    @include tablet {
+      align-self: flex-end;
+      // margin-top: 1.6rem;
+    }
   }
 }

@@ -97,11 +97,6 @@ label {
     margin: 0 auto;
   }
 }
-@media (min-width: 1280px) {
-  .comment-form {
-    padding-right: 2rem;
-  }
-}
 .comment-form__form-inputs {
   display: flex;
   flex-direction: column;
@@ -127,10 +122,16 @@ label {
   font-weight: 600;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .comment-form__label {
+    margin-right: 2rem;
+  }
+}
 .comment-form__textarea {
   background-color: #fafafa;
   border-radius: 0.4rem;
   border: 1px solid #e1e1e1;
+  height: 3.6rem;
   font-family: "Avenir Regular";
   font-weight: 400;
   margin: 0 0 1.2rem;
@@ -138,17 +139,17 @@ label {
   padding: 1.6rem;
   resize: none;
   overflow: hidden;
-  width: 100%;
+  width: 95%;
 }
 .comment-form__textarea:focus {
   outline: #0095ff solid 2px;
 }
-.comment-form__textarea:invalid {
+.comment-form__textarea--invalid {
   outline: #d22d2d solid 1px;
 }
 @media (min-width: 768px) {
   .comment-form__textarea {
-    width: 36rem;
+    width: 32rem;
     height: 4rem;
     padding: 1.2rem 0 0 2rem;
     margin: 0;
@@ -169,4 +170,15 @@ label {
     height: 4.8rem;
     width: 4.8rem;
   }
+}
+.comment-form__button-box {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .comment-form__button-box {
+    align-self: flex-end;
+  }
+}
+.comment-form__button .comment-form button {
+  width: 100%;
 }/*# sourceMappingURL=CommentForm.css.map */

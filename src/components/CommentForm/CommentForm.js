@@ -7,13 +7,16 @@ import axios from "axios";
 const CommentForm = ({ video, updateComments }) => {
   const [comment, setComment] = useState("");
   const [valid, setValid] = useState(false);
+  const [addClass, setAddClass] = useState("");
 
   const API_URL = "https://project-2-api.herokuapp.com/videos/";
   const API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
 
-  useEffect(() => {
-    setValid(comment.length > 2);
-  }, [comment]);
+  const onChangeHandler = (event) => {
+    setComment(event.target.value);
+    setValid(event.target.value.trim().length > 0);
+    setAddClass(!valid ? "comment-form__textarea--invalid" : "");
+  };
 
   const postComment = async () => {
     try {
@@ -30,10 +33,13 @@ const CommentForm = ({ video, updateComments }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!valid) {
-      alert("Comments must include at least 3 characters.");
+      setAddClass("comment-form__textarea--invalid");
+      alert("Please enter a comment.");
     } else {
       postComment();
       setComment("");
+      setAddClass("");
+      setValid(false);
     }
   };
 
@@ -47,16 +53,18 @@ const CommentForm = ({ video, updateComments }) => {
           <textarea
             name="comment"
             placeholder="Add a new comment"
-            className="comment-form__textarea"
+            className={`comment-form__textarea ${addClass}`}
             value={comment}
-            onChange={(e) => setComment(e.target.value)}
+            onChange={onChangeHandler}
           />
         </label>
-        <Button
-          icon={add_comment}
-          text={"COMMENT"}
-          className="comment-form__button"
-        />
+        <div className="comment-form__button-box">
+          <Button
+            icon={add_comment}
+            text="COMMENT"
+            className="comment-form__button"
+          />
+        </div>
       </div>
     </form>
   );

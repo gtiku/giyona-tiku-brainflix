@@ -9,15 +9,18 @@
 
   @include tablet {
     @include flex($justify: space-between);
-
-    &__flex {
-      @include flex($justify: flex-end);
-    }
   }
 
   @include desktop {
     width: 116rem;
     margin: 0 auto;
+  }
+
+  &__flex {
+    width: 100%;
+    @include tablet {
+      @include flex($justify: flex-end);
+    }
   }
 
   &__flex-mobile {
@@ -40,7 +43,7 @@
     @include tablet {
       padding: 0 0.4rem;
       margin-left: 1.6rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.4rem;
       &--mobile {
         display: none;
       }
@@ -54,15 +57,18 @@
   &__searchbar {
     @include input;
     background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
-    height: 3.6rem;
     padding: 1.6rem 1.2rem 1.2rem 4rem;
     width: 100%;
-    margin: 0.8rem 1.6rem 1.2rem 0;
+    margin: 0.8rem 1.6rem 0.8rem 0;
 
     @include tablet {
       width: 18rem;
       margin-right: 2rem;
       height: 4rem;
     }
+  }
+
+  &__upload {
+    margin-bottom: 0.4rem;
   }
 }

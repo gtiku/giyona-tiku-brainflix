@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomeView from "./pages/HomeView/HomeView";
 import Header from "./components/Header/Header";
-import Upload from "./pages/Upload/Upload";
+import UploadView from "./pages/UploadView/UploadView";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="videos/:videoID" element={<HomeView />} />
-          <Route path="/upload" element={<Upload />} />
+          <Route path="/upload" element={<UploadView />} />
         </Routes>
       </BrowserRouter>
     </div>

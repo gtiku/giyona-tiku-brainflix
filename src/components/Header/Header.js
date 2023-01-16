@@ -23,7 +23,7 @@ const Header = () => {
           <div className="header__pfp-box header__pfp-box--mobile"></div>
         </div>
         <Link to="/upload">
-          <Button icon={upload} text={"UPLOAD"} className="header__upload" />
+          <Button icon={upload} text="UPLOAD" className="header__upload" />
         </Link>
 
         <div className="header__pfp-box header__pfp-box--tablet"></div>

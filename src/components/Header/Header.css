@@ -96,17 +96,22 @@ label {
     justify-content: space-between;
     align-items: center;
   }
-  .header__flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
 }
 @media (min-width: 1280px) {
   .header {
     width: 116rem;
     margin: 0 auto;
+  }
+}
+.header__flex {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header__flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 .header__flex-mobile {
@@ -142,7 +147,7 @@ label {
   .header__pfp-box {
     padding: 0 0.4rem;
     margin-left: 1.6rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
   }
   .header__pfp-box--mobile {
     display: none;
@@ -155,17 +160,14 @@ label {
   background-color: #fafafa;
   border-radius: 0.4rem;
   border: 1px solid #e1e1e1;
-  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
   height: 3.6rem;
+  background: url("../../assets/images/icons/search.svg") no-repeat 0.8rem;
   padding: 1.6rem 1.2rem 1.2rem 4rem;
   width: 100%;
-  margin: 0.8rem 1.6rem 1.2rem 0;
+  margin: 0.8rem 1.6rem 0.8rem 0;
 }
 .header__searchbar:focus {
   outline: #0095ff solid 2px;
-}
-.header__searchbar:invalid {
-  outline: #d22d2d solid 1px;
 }
 @media (min-width: 768px) {
   .header__searchbar {
@@ -173,4 +175,7 @@ label {
     margin-right: 2rem;
     height: 4rem;
   }
+}
+.header__upload {
+  margin-bottom: 0.4rem;
 }/*# sourceMappingURL=Header.css.map */

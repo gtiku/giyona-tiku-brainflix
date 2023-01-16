@@ -44,13 +44,10 @@
   background-color: $alabaster;
   border-radius: 0.4rem;
   border: 1px solid $mercury;
+  height: 3.6rem;
 
   &:focus {
     outline: $blue solid 2px;
-  }
-
-  &:invalid {
-    outline: #d22d2d solid 1px;
   }
 }
 
@@ -76,6 +73,7 @@
 
   @include tablet {
     width: 16rem;
+    height: 4rem;
     margin: 0;
   }
 }

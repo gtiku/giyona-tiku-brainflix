@@ -3,15 +3,16 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global";
 
-button {
+.button {
   @include button($blue);
-}
 
-img {
-  float: left;
-  padding-left: 0.8rem;
-}
+  &__icon {
+    float: left;
+    padding-left: 0.8rem;
+  }
 
-p {
-  padding: 0.4rem 3rem 0 0;
+  &__text {
+    padding: 0.4rem 3.6rem 0 0;
+    font-weight: 600;
+  }
 }

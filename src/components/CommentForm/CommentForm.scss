@@ -16,10 +16,6 @@
     margin: 0 auto;
   }
 
-  @include desktop {
-    padding-right: 2rem;
-  }
-
   &__form-inputs {
     @include flex($direction: column, $align: flex-start);
     width: 100%;
@@ -35,6 +31,10 @@
     color: $silver;
     font-weight: 600;
     width: 100%;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
   }
 
   &__textarea {
@@ -46,10 +46,14 @@
     padding: 1.6rem;
     resize: none;
     overflow: hidden;
-    width: 100%;
+    width: 95%;
+
+    &--invalid {
+      outline: #d22d2d solid 1px;
+    }
 
     @include tablet {
-      width: 36rem;
+      width: 32rem;
       height: 4rem;
       padding: 1.2rem 0 0 2rem;
       margin: 0;
@@ -61,5 +65,16 @@
     background-image: url("../../assets/images/Mohan-muruge.jpg");
     margin-right: 2rem;
     margin-left: 0.4rem;
+  }
+
+  &__button-box {
+    width: 100%;
+    @include tablet {
+      align-self: flex-end;
+    }
+  }
+
+  &__button & button {
+    width: 100%;
   }
 }
