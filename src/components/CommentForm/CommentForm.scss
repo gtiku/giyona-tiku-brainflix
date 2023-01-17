@@ -12,6 +12,7 @@
   @include tablet {
     @include flex($justify: space-between, $align: flex-end);
     padding-bottom: 3rem;
+    padding-left: 0.4rem;
     margin: 0 auto;
   }
 
@@ -45,7 +46,7 @@
     padding: 1.6rem;
     resize: none;
     overflow: hidden;
-    width: 95%;
+    width: 100%;
 
     &--invalid {
       outline: #d22d2d solid 1px;

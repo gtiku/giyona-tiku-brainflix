@@ -93,6 +93,7 @@ label {
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 3rem;
+    padding-left: 0.4rem;
     margin: 0 auto;
   }
 }
