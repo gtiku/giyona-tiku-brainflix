@@ -8,38 +8,45 @@ import VideoComments from "../../components/VideoComments/VideoComments";
 import NextVideosList from "../../components/NextVideos/NextVideosList";
 
 const HomeView = () => {
+  document.title = "Brainflix";
+  let { videoID } = useParams();
+
   const [video, setVideo] = useState(null);
   const [nextVideos, setNextVideos] = useState(null);
 
   const API_URL = "https://project-2-api.herokuapp.com/videos/";
   const API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
 
-  let { videoID } = useParams();
-  if (videoID === undefined) {
-    videoID = "9c268c0a-83dc-4b96-856a-bb5ded2772b1";
-  }
+  useEffect(() => {
+    if (!videoID) {
+      const startHomeView = async () => {
+        try {
+          const { data: videos } = await axios.get(API_URL + API_KEY);
+          setNextVideos(videos.filter((video) => video.id !== videos[0].id));
+          const { data } = await axios.get(API_URL + videos[0].id + API_KEY);
+          setVideo(data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      startHomeView();
+    }
+  }, []);
 
   useEffect(() => {
-    const getVideos = async () => {
-      try {
-        const { data } = await axios.get(API_URL + videoID + API_KEY);
-        setVideo(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    const getNextVideos = async () => {
-      try {
-        const { data } = await axios.get(API_URL + API_KEY);
-        setNextVideos(data.filter((video) => video.id !== videoID));
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    getVideos();
-    getNextVideos();
+    if (videoID) {
+      const getVideos = async () => {
+        try {
+          const { data: videos } = await axios.get(API_URL + API_KEY);
+          setNextVideos(videos.filter((video) => video.id !== videoID));
+          const { data } = await axios.get(API_URL + videoID + API_KEY);
+          setVideo(data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      getVideos();
+    }
   }, [videoID]);
 
   while (!video || !nextVideos) {

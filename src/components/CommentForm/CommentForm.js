@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CommentForm.scss";
 import add_comment from "../../assets/images/icons/add_comment.svg";
 import Button from "../Button/Button";

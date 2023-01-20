@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Upload = () => {
+  document.title = "Upload Video - Brainflix";
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [valid, setValid] = useState(false);
@@ -20,13 +21,6 @@ const Upload = () => {
   }, [title, description]);
 
   let navigate = useNavigate();
-
-  const resetHandler = () => {
-    setTitle("");
-    setDescription("");
-    setAddClassTitle("");
-    setAddClassDescription("");
-  };
 
   const notify = () => {
     toast.success("Success!", {
@@ -68,7 +62,11 @@ const Upload = () => {
           <div className="upload-form__image-box">
             <label htmlFor="title" className="upload-form__label">
               VIDEO THUMBNAIL{" "}
-              <img src={upload_video} className="upload-form__image" />
+              <img
+                src={upload_video}
+                alt="upload video image"
+                className="upload-form__image"
+              />
             </label>
           </div>
           <div className="upload-form__text-box">
@@ -99,11 +97,7 @@ const Upload = () => {
         </div>
 
         <div className="upload-form__buttons">
-          <button
-            type="reset"
-            className="upload-form__cancel"
-            onClick={resetHandler}
-          >
+          <button className="upload-form__cancel" onClick={() => navigate("/")}>
             CANCEL
           </button>
           <Button
