@@ -112,6 +112,10 @@
     &--invalid {
       outline: #d22d2d solid 1px;
     }
+
+    &--success {
+      outline: limegreen solid 1px;
+    }
   }
 
   &__buttons {

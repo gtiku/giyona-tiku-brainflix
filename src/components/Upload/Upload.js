@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Upload.scss";
 import upload_video from "../../assets/images/Upload-video-preview.jpg";
@@ -35,6 +36,23 @@ const Upload = () => {
     });
   };
 
+  const postVideo = async () => {
+    try {
+      await axios.post(`http://localhost:8080/api/v1/videos`, {
+        name: "Mohan Muruge",
+        title: title,
+        description: description,
+      });
+      console.log("POST");
+      notify();
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
     if (!valid) {
@@ -45,12 +63,9 @@ const Upload = () => {
         description.trim().length === 0 ? "upload-form__textarea--invalid" : ""
       );
     } else {
-      setAddClassTitle("");
-      setAddClassDescription("");
-      notify();
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
+      setAddClassTitle("upload-form__input--success");
+      setAddClassDescription("upload-form__textarea--success");
+      postVideo();
     }
   };
 
@@ -97,9 +112,10 @@ const Upload = () => {
         </div>
 
         <div className="upload-form__buttons">
-          <button className="upload-form__cancel" onClick={() => navigate("/")}>
-            CANCEL
-          </button>
+          <Link to="/">
+            <button className="upload-form__cancel">CANCEL</button>
+          </Link>
+
           <Button
             icon={publish}
             text={"PUBLISH"}
