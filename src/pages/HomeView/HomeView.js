@@ -13,43 +13,45 @@ const HomeView = () => {
 
   const [video, setVideo] = useState(null);
   const [nextVideos, setNextVideos] = useState(null);
-
-  const API_URL = "https://project-2-api.herokuapp.com/videos/";
-  const API_KEY = "?api_key=8b3718fa-5961-46ff-943a-ff0407423b81";
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!videoID) {
       const startHomeView = async () => {
         try {
-          const { data: videos } = await axios.get(API_URL + API_KEY);
-          setNextVideos(videos.filter((video) => video.id !== videos[0].id));
-          const { data } = await axios.get(API_URL + videos[0].id + API_KEY);
-          setVideo(data);
+          const { data } = await axios.get(
+            "http://localhost:8080/api/v1/videos/"
+          );
+          setVideo(data.video);
+          setNextVideos(data.nextVideos);
+          setIsLoading(false);
         } catch (error) {
           console.error(error);
         }
       };
       startHomeView();
     }
-  }, []);
+  });
 
   useEffect(() => {
     if (videoID) {
-      const getVideos = async () => {
+      const nextVideoView = async () => {
         try {
-          const { data: videos } = await axios.get(API_URL + API_KEY);
-          setNextVideos(videos.filter((video) => video.id !== videoID));
-          const { data } = await axios.get(API_URL + videoID + API_KEY);
-          setVideo(data);
+          const { data } = await axios.get(
+            `http://localhost:8080/api/v1/videos/${videoID}`
+          );
+          setVideo(data.video);
+          setNextVideos(data.nextVideos);
+          setIsLoading(false);
         } catch (error) {
           console.error(error);
         }
       };
-      getVideos();
+      nextVideoView();
     }
   }, [videoID]);
 
-  while (!video || !nextVideos) {
+  while (isLoading || !video) {
     return <p>Loading...</p>;
   }
 

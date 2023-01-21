@@ -9,9 +9,9 @@ import upload from "../../assets/images/icons/upload.svg";
 const Header = () => {
   return (
     <header className="header">
-      <a href="./">
+      <Link to="/">
         <img src={logo} className="header__logo" alt="brainflix logo" />
-      </a>
+      </Link>
 
       <div className="header__flex">
         <div className="header__flex-mobile">
