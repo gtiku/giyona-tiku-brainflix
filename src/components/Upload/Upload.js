@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../Button/Button";
+import ImageUpload from "../ImageUpload/ImageUpload";
 import "./Upload.scss";
-import upload_video from "../../assets/images/Upload-video-preview.jpg";
+import video_placeholder from "../../assets/images/video-placeholder.jpg";
 import publish from "../../assets/images/icons/publish.svg";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -16,10 +17,31 @@ const Upload = () => {
   const [valid, setValid] = useState(false);
   const [addClassTitle, setAddClassTitle] = useState("");
   const [addClassDescription, setAddClassDescription] = useState("");
+  const [image, setImage] = useState(video_placeholder);
+  const [isNewImage, setIsNewImage] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState(null);
 
   useEffect(() => {
     setValid(title.trim().length > 0 && description.trim().length > 0);
   }, [title, description]);
+
+  useEffect(() => {
+    if (isNewImage) {
+      const fileReader = new FileReader();
+      fileReader.onload = () => {
+        setPreviewUrl(fileReader.result);
+      };
+      fileReader.readAsDataURL(image);
+    }
+  }, [image]);
+
+  const isNewImageFile = (imageFile) => {
+    if (!imageFile) {
+      setIsNewImage(false);
+    }
+    setImage(imageFile);
+    setIsNewImage(true);
+  };
 
   let navigate = useNavigate();
 
@@ -38,12 +60,18 @@ const Upload = () => {
 
   const postVideo = async () => {
     try {
-      await axios.post(`http://localhost:8080/api/v1/videos`, {
-        name: "Mohan Muruge",
-        title: title,
-        description: description,
+      const formData = new FormData();
+      formData.set("name", "Mohan Muruge");
+      formData.set("title", title);
+      formData.append("description", description);
+      if (isNewImage) {
+        formData.append("image", image, previewUrl);
+      }
+
+      await axios.post(`http://localhost:8080/api/v1/videos/`, formData, {
+        headers: { "Content-type": "multipart/form-data" },
       });
-      console.log("POST");
+
       notify();
       setTimeout(() => {
         navigate("/");
@@ -71,18 +99,24 @@ const Upload = () => {
 
   return (
     <>
-      <form className="upload-form" onSubmit={submitHandler}>
+      <form
+        className="upload-form"
+        onSubmit={submitHandler}
+        encType="multipart/form-data"
+        method="POST"
+      >
         <h1 className="upload-form__heading">Upload Video</h1>
         <div className="upload-form__image-text-box">
           <div className="upload-form__image-box">
             <label htmlFor="title" className="upload-form__label">
-              VIDEO THUMBNAIL{" "}
+              VIDEO THUMBNAIL
               <img
-                src={upload_video}
-                alt="upload video image"
+                src={!previewUrl ? image : previewUrl}
+                alt="video image preview"
                 className="upload-form__image"
               />
             </label>
+            <ImageUpload id="image" isNewImageFile={isNewImageFile} />
           </div>
           <div className="upload-form__text-box">
             <label htmlFor="title" className="upload-form__label">
@@ -119,7 +153,7 @@ const Upload = () => {
           <Button
             icon={publish}
             text={"PUBLISH"}
-            type="submit"
+            type={"submit"}
             className="upload-form__publish"
           />
         </div>

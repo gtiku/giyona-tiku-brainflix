@@ -62,6 +62,7 @@ const CommentForm = ({ video, updateComments }) => {
           <Button
             icon={add_comment}
             text="COMMENT"
+            type={"submit"}
             className="comment-form__button"
           />
         </div>
