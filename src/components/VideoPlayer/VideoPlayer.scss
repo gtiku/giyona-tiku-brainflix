@@ -14,12 +14,14 @@
     }
   }
 
-  &__player {
+  &__player-box > &__player {
     width: 100%;
     height: auto;
+    max-height: 30rem;
 
     @include tablet {
       padding: 0 4rem;
+      max-height: 50rem;
     }
 
     @include desktop {

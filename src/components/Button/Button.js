@@ -3,9 +3,9 @@ import "./Button.scss";
 
 const Button = ({ icon, text, className, type }) => {
   return (
-    <button type={type} className={`button ${className}`}>
-      <img src={icon} alt={text} className="button__icon" />
-      <p className="button__text">{text}</p>
+    <button type={type} className={`icon-button ${className}`}>
+      <img src={icon} alt={text} className="icon-button__icon" />
+      <p className="icon-button__text">{text}</p>
     </button>
   );
 };

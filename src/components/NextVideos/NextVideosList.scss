@@ -7,14 +7,15 @@
   @include sectionPadding;
   @include tablet {
     margin-right: auto;
+    margin-top: 2rem;
   }
 
   &__heading {
     color: $silver;
-    margin: -1rem 0 1.6rem;
+    margin: 3rem 0 2.4rem;
 
     @include tablet {
-      margin: 3rem 0 2.4rem;
+      margin: 4rem 0 3rem;
     }
 
     @include desktop {
@@ -22,7 +23,7 @@
     }
   }
 
-  a {
+  &__links {
     text-decoration: none;
     color: $black;
   }

@@ -5,16 +5,16 @@ import "./NextVideosList.scss";
 
 const NextVideosList = ({ nextVideos }) => {
   return (
-    <div className="next-videos">
+    <section className="next-videos">
       <h3 className="next-videos__heading">NEXT VIDEOS</h3>
       {nextVideos.map((video) => (
         <div className="next-videos__box" key={video.id}>
-          <Link to={`/videos/${video.id}`}>
+          <Link to={`/videos/${video.id}`} className="next-videos__links">
             <NextVideo video={video} />
           </Link>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

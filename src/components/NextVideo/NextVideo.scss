@@ -30,24 +30,24 @@
     }
   }
 
-  &__title {
-    font-weight: 700;
-    width: 18rem;
-    padding-bottom: 1.6rem;
-  }
-
   &__video-text {
     margin: 0;
-    // @include flex(
-    //   $direction: column,
-    //   $justify: space-between,
-    //   $align: flex-start
-    // );
+    height: 100%;
 
     @include flex(
       $direction: column,
       $justify: flex-start,
       $align: space-between
     );
+  }
+
+  &__title {
+    font-weight: 700;
+    width: 18rem;
+    padding-bottom: 1.6rem;
+  }
+
+  &__channel {
+    justify-self: flex-end;
   }
 }

@@ -85,41 +85,45 @@ const Upload = () => {
     event.preventDefault();
     if (!valid) {
       setAddClassTitle(
-        title.trim().length === 0 ? "upload-form__input--invalid" : ""
+        title.trim().length === 0 ? "upload__input--invalid" : ""
       );
       setAddClassDescription(
-        description.trim().length === 0 ? "upload-form__textarea--invalid" : ""
+        description.trim().length === 0 ? "upload__textarea--invalid" : ""
       );
     } else {
-      setAddClassTitle("upload-form__input--success");
-      setAddClassDescription("upload-form__textarea--success");
+      setAddClassTitle("upload__input--success");
+      setAddClassDescription("upload__textarea--success");
       postVideo();
     }
   };
 
+  const navToHome = () => {
+    navigate("/");
+  };
+
   return (
-    <>
+    <section className="upload">
       <form
-        className="upload-form"
+        className="upload__form"
         onSubmit={submitHandler}
         encType="multipart/form-data"
         method="POST"
       >
-        <h1 className="upload-form__heading">Upload Video</h1>
-        <div className="upload-form__image-text-box">
-          <div className="upload-form__image-box">
-            <label htmlFor="title" className="upload-form__label">
+        <h1 className="upload__heading">Upload Video</h1>
+        <div className="upload__image-text-box">
+          <div className="upload__image-box">
+            <label htmlFor="title" className="upload__label">
               VIDEO THUMBNAIL
               <img
                 src={!previewUrl ? image : previewUrl}
                 alt="video image preview"
-                className="upload-form__image"
+                className="upload__image"
               />
             </label>
             <ImageUpload id="image" isNewImageFile={isNewImageFile} />
           </div>
-          <div className="upload-form__text-box">
-            <label htmlFor="title" className="upload-form__label">
+          <div className="upload__text-box">
+            <label htmlFor="title" className="upload__label">
               TITLE YOUR VIDEO{" "}
               <input
                 type="text"
@@ -128,10 +132,10 @@ const Upload = () => {
                 placeholder="Add a title to your video"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className={`upload-form__input ${addClassTitle}`}
+                className={`upload__input ${addClassTitle}`}
               />
             </label>
-            <label htmlFor="description" className="upload-form__label">
+            <label htmlFor="description" className="upload__label">
               ADD A VIDEO DESCRIPTION{" "}
               <textarea
                 name="description"
@@ -139,27 +143,27 @@ const Upload = () => {
                 placeholder="Add a description to your video"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className={`upload-form__textarea ${addClassDescription}`}
+                className={`upload__textarea ${addClassDescription}`}
               />
             </label>
           </div>
         </div>
 
-        <div className="upload-form__buttons">
-          <Link to="/">
-            <button className="upload-form__cancel">CANCEL</button>
-          </Link>
+        <div className="upload__buttons">
+          <button type="button" className="upload__cancel" onClick={navToHome}>
+            CANCEL
+          </button>
 
           <Button
             icon={publish}
             text={"PUBLISH"}
             type={"submit"}
-            className="upload-form__publish"
+            className="upload__publish"
           />
         </div>
       </form>
       <ToastContainer />
-    </>
+    </section>
   );
 };
 

@@ -25,7 +25,7 @@
   }
 
   &__stats {
-    color: $mercury;
+    color: $silver;
     @include flex($justify: space-between);
 
     @include tablet {

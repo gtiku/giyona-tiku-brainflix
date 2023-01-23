@@ -57,7 +57,7 @@
   }
 
   &__date {
-    color: $mercury;
+    color: $silver;
   }
 
   &__comment-delete {
@@ -82,6 +82,7 @@
 
   &__delete {
     margin-left: 1.6rem;
+    display: none;
 
     @include tablet {
       align-self: flex-end;

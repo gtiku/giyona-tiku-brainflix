@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global";
 
-.button {
+.icon-button {
   @include button($blue);
 
   &__icon {

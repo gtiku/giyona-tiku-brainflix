@@ -53,6 +53,17 @@
 }
 
 @mixin button($bg: $blue) {
+  border-radius: 0.4rem;
+  border: none;
+  height: 4rem;
+  width: 100%;
+
+  @include tablet {
+    width: 16rem;
+    height: 4rem;
+    margin: 0;
+  }
+
   @if $bg == $blue {
     background-color: $bg;
     color: white;
@@ -63,18 +74,7 @@
     background-color: $white;
     color: $blue;
     &:hover {
-      background-color: $alabaster;
+      background-color: $mercury;
     }
-  }
-
-  border-radius: 0.4rem;
-  border: none;
-  height: 4rem;
-  width: 100%;
-
-  @include tablet {
-    width: 16rem;
-    height: 4rem;
-    margin: 0;
   }
 }
