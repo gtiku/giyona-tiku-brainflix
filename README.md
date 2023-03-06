@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Brainflix (Bootcamp Project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React, Custom API, Sass Responsive Design
 
-## Available Scripts
+Bootcamp project to build a YouTube-like web application with videos and comments.
 
-In the project directory, you can run:
+> ### Features
+>
+> - Adding and deleting comments via POST and DELETE requests
+> - Uploading thumbnail images for new videos
+> - express.js backend with custom API
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![](./src/assets/images/readme/brainflix.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br><br>
 
-### `npm test`
+## Functional Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### API Server
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The end-points and response structure of your API server must match that of the mock API server.
+- The API must have the following end-points:
+  - GET /videos that responds with an array of videos.
+  - GET /videos/:id that responds with an object containing the details of the video with an id of :id.
+  - POST /videos that will add a new video to the video list. A unique id must be generated for each video added.
+- Submitting a new video from the form must POST to the API.
+- Images should be served as static assets from the Node server.
+  - Including the image used for creating a new video via Upload Form
+- The data should persist on the server. If you restart Node server, the data shouldn't reset. This means you need to use a JSON file for persistence, writing to it, and reading from it.
+- You should have a single source of truth for your data. Only one JSON file should be used to store all the data on your server.
+  - Since you are now creating your own REST API, you now have to think about how you will use your one data file to mimic the API response from Sprint 2. One endpoint will return a small amount of data for each video that exists, the second endpoint will return all the data for one specific video. Think about how you may use your data file to achieve this within your project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Video Upload Page
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- With the "Video Upload" page now created, add the actual upload functionality. Specifically, this should include an event handler for the upload form so that when a user submits a new video, it posts the video to your API in order to save it to the list of videos. A new video needs to be persisted in a JSON file with the app data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Visual Design Requirements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The site must be responsive at and between breakpoints. Therefore it should closely resemble the mockups in the design package.
 
-## Learn More
+### Implementation Requirements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The site must make use of the provided assets.
+- The app must use multiple React components as discussed in class.
+- The app must use react-router-dom with multiple routes, one for each page.
+- The project's CSS must use SASS variables.
+- The CSS must use BEM principles when naming classes.
+- The site should use Flexbox for layout control.
 
-### Code Splitting
+<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Setup
 
-### Analyzing the Bundle Size
+1. Clone this repository.
+2. In the terminal, run the following command to install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+npm i
+```
 
-### Making a Progressive Web App
+3. Run the app on your local server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```sh
+npm start
+```
 
-### Advanced Configuration
+<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Backend API
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The API repository can be accessed [here](https://github.com/gtiku/giyona-tiku-brainflix-api).
