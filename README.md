@@ -25,7 +25,7 @@ Bootcamp project to build a YouTube-like web application with videos and comment
 - The end-points and response structure of your API server must match that of the mock API server.
 - The API must have the following end-points:
   - GET /videos that responds with an array of videos.
-  - GET /videos/:id that responds with an object containing the details of the video with an id of :id.
+  - GET /videos/:id that responds with an object containing the details and comments for a video an id of :id.
   - POST /videos that will add a new video to the video list. A unique id must be generated for each video added.
 - Submitting a new video from the form must POST to the API.
 - Images should be served as static assets from the Node server.
@@ -34,13 +34,20 @@ Bootcamp project to build a YouTube-like web application with videos and comment
 - You should have a single source of truth for your data. Only one JSON file should be used to store all the data on your server.
   - Since you are now creating your own REST API, you now have to think about how you will use your one data file to mimic the API response from Sprint 2. One endpoint will return a small amount of data for each video that exists, the second endpoint will return all the data for one specific video. Think about how you may use your data file to achieve this within your project.
 
-<br>
+<br><br>
+
+![image](https://user-images.githubusercontent.com/62849940/229697683-3882d2df-e10c-458e-abfb-4f757c478002.png)
+<br><br>
 
 #### Video Upload Page
 
 ---
 
 - With the "Video Upload" page now created, add the actual upload functionality. Specifically, this should include an event handler for the upload form so that when a user submits a new video, it posts the video to your API in order to save it to the list of videos. A new video needs to be persisted in a JSON file with the app data.
+
+<br><br>
+![image](https://user-images.githubusercontent.com/62849940/229697770-48f0273b-db6a-4cd2-a2d6-1b9590af724b.png)
+<br><br>
 
 #### Visual Design Requirements
 
